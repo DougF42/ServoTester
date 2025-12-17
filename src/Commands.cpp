@@ -301,13 +301,20 @@ void Commands::processCommand(char *cmdBuf, int buflen)
         {
             runFlag = 1;
         }
+        if (runFlag > 0)
+        {
+            Serial.println();
+            showCurrentSettings();
+            Serial.println();
 
-        Serial.print("Initialize servo to MIN position (");Serial.print(curMin);Serial.println(")");
-        setCurPos(curMin); // pout servo in Initial position
-        stepDir = true;    // Going up...
-        delay(1000);       // WAIT 1 second for servo toget to initial position
-        Serial.print("Start run cycle. Repeat for "); Serial.print(runFlag);Serial.println(" times"); 
-
+            Serial.print("Initialize servo to MIN position ("); Serial.print(curMin); Serial.println(")");
+            setCurPos(curMin); // pout servo in Initial position
+            stepDir = true;    // Going up...
+            delay(1000);       // WAIT 1 second for servo toget to initial position
+            Serial.print("Start run cycle. Repeat for "); Serial.print(runFlag);
+            Serial.println(" times");
+        }
+        
     } else if (isCommand("stop"))
     {
         runFlag=0;

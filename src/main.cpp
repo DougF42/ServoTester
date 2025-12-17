@@ -4,7 +4,7 @@
 #include "Configuration.h"
 #include "Commands.h"
 
-#define  VERSION "1.0.0"
+#define  VERSION "1.0.2"
 
 // put function declarations here:
 int myFunction(int, int);
